@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Image Editor in JavaScript | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container disable">
+    <h2>Easy Image Editor</h2>
+
+    <div class="wrapper">
+      <div class="editor-panel">
+        <div class="filter">
+          <label class="title">Filters</label>
+          <div class="options">
+            <button id="brightness" class="active">Brightness</button>
+            <button id="saturation">Saturation</button>
+            <button id="inversion">Inversion</button>
+            <button id="grayscale">Grayscale</button>
+          </div>
+          <div class="slider">
+            <div class="filter-info">
+              <p class="name">Brighteness</p>
+              <p class="value">100%</p>
+            </div>
+            <input type="range" value="100" min="0" max="200">
+          </div>
+        </div>
+        <div class="rotate">
+          <label class="title">Rotate & Flip</label>
+          <div class="options">
+            <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+            <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+            <button id="vertical"><i class='bx bx-reflect-horizontal'></i></button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="preview-img">
+        <img src="image-placeholder.svg" alt="preview-img">
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="controls">
+
+      <button class="reset-filter">Reset Filters</button>
+
+      <div class="row">
+        <input type="file" class="file-input" accept="image/*" hidden>
+        <button class="choose-img">Choose Image</button>
+        <button class="save-img">Save Image</button>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<div class="container disable">
+
+  <h2>Отредактируй сАбакена</h2>
+  <div class="wrapper">
+
+
+
+    <!-- фото собаки старт -->
+    <!-- <div class="dog" id="dog">
+              <img src="./assets/images/dog-01.png" alt="dog" id="dog-img">
+            </div> -->
+    <!-- фото собаки стоп -->
+
+    <!-- перетаскивание элементов -->
+
+    <div class="draggables">
+
+      <div class="">
+
+        <!-- ГЛАЗА ДЛЯ САБАКЕНА -->
+        <div class="eyes filter">
+          <img src="./assets/images/eyes-01.png" alt="eyes" class="drag eye" draggable="true" id="eye-01">
+          <img src="./assets/images/eyes-02.png" alt="eyes" class="drag eye" draggable="true" id="eye-02">
+          <img src="./assets/images/eyes-03.png" alt="eyes" class="drag eye" draggable="true" id="eye-03">
+          <img src="./assets/images/eyes-04.png" alt="eyes" class="drag eye" draggable="true" id="eye-04">
+        </div>
+
+        <!-- РОТ САБАКЕНА -->
+        <div class="mouths slider">
+          <img src="./assets/images/mouth-01.png" alt="mouth" class="drag eye" draggable="true" id="mouth-01">
+          <img src="./assets/images/mouth-02.png" alt="mouth" class="drag eye" draggable="true" id="mouth-02">
+          <img src="./assets/images/mouth-03.png" alt="mouth" class="drag eye" draggable="true" id="mouth-03">
+          <img src="./assets/images/mouth-04.png" alt="mouth" class="drag eye" draggable="true" id="mouth-04">
+        </div>
+
+
+        <!-- ОЧКИ ДЛЯ САБАКЕНА -->
+        <div class="glasses rotate">
+          <img src="./assets/images/glasses-01.png" alt="glass" class="drag eye" draggable="true" id="glass-01">
+          <img src="./assets/images/glasses-02.png" alt="glass" class="drag eye" draggable="true" id="glass-02">
+        </div>
+
+        <!-- ВСЯКИЕ УКРАШЕНИЯ САБАКЕНА -->
+        <div class="hats">
+          <img src="./assets/images/hats-01.png" alt="hats" class="drag eye" draggable="true" id="hat-01">
+          <img src="./assets/images/hats-02.png" alt="hats" class="drag eye" draggable="true" id="hat-02">
+          <img src="./assets/images/hats-03.png" alt="hats" class="drag eye" draggable="true" id="hat-03">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="preview-img dog" id="dog">
+      <img src="./assets/images/dog-01.png" alt="preview-img" id="dog-image">
+    </div>
+
+  </div>
+
+  <!-- СОХРАНЕНИЕ ФОТО И ЗАГРУЗКА -->
+  <div class="controls">
+    <!-- <button class="reset-filter">Reset Filters</button> -->
+    <div class="row">
+      <input type="file" class="file-input" accept="image/*" hidden>
+      <button class="choose-img">Загрузить</button>
+      <button class="save-img">Сохранить</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="container">
+  <div class="dog" id="dog">
+    <img src="dog-01.png" id="dog-image" />
+  </div>
+  <div class="draggables">
+    <div class="eyes">
+      <img src="eyes-01.png" class="drag eye" draggable="true" id="eye-01" />
+      <img src="eyes-02.png" class="drag eye" draggable="true" id="eye-02" />
+      <img src="eyes-03.png" class="drag eye" draggable="true" id="eye-03" />
+      <img src="eyes-04.png" class="drag eye" draggable="true" id="eye-04" />
+    </div>
+    <div class="mouths">
+      <img src="mouth-01.png" class="drag mouth" draggable="true" id="mouth-01" />
+      <img src="mouth-02.png" class="drag mouth" draggable="true" id="mouth-02" />
+      <img src="mouth-03.png" class="drag mouth" draggable="true" id="mouth-03" />
+      <img src="mouth-04.png" class="drag mouth" draggable="true" id="mouth-04" />
+    </div>
+    <div class="glasses">
+      <img src="glasses-01.png" class="drag glass" draggable="true" id="glass-01" />
+      <img src="glasses-02.png" class="drag glass" draggable="true" id="glass-02" />
+    </div>
+    <div class="hats">
+      <img src="hats-01.png" class="drag hat" draggable="true" id="hat-01" />
+      <img src="hats-02.png" class="drag hat" draggable="true" id="hat-02" />
+      <img src="hats-03.png" class="drag hat" draggable="true" id="hat-03" />
+    </div>
+  </div>
+</div>

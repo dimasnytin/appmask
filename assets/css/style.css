@@ -1,0 +1,176 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #E3F2FD;
+}
+
+.container {
+  width: 31.25em;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  margin: 4em auto;
+  box-shadow: 0 0 0 0.62em #ffffff, 0 1.25em 3.12em rgb(83, 66, 15, 0.5);
+  background-color: #ffffff;
+  border-radius: 0.5em;
+}
+
+.dog {
+  width: 95%;
+  height: 21.87em;
+  position: relative;
+  margin: 1em auto;
+  display: grid;
+  place-items: center;
+  background-color: #ffedb8;
+  overflow: hidden;
+}
+
+.dog img {
+  position: relative;
+  height: 18.75em;
+  bottom: -1.87em;
+}
+
+.draggables {
+  padding: 1em 0;
+  width: 31.25em;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.draggables div {
+  position: relative;
+}
+
+[draggable] {
+  cursor: move;
+}
+
+img {
+  position: absolute;
+}
+
+.eyes {
+  height: 3.75em;
+}
+
+.mouths {
+  height: 3.12em;
+}
+
+.glasses {
+  height: 5em;
+}
+
+.hats {
+  height: 7em;
+}
+
+#eye-01,
+#mouth-01 {
+  left: 0.93em;
+}
+
+#hat-01 {
+  left: 5em;
+}
+
+#glass-01 {
+  left: 4.37em;
+}
+
+#eye-02,
+#mouth-02 {
+  left: 8.43em;
+}
+
+#hat-02 {
+  left: 12.5em;
+}
+
+#glass-02 {
+  left: 18.75em;
+}
+
+#eye-03,
+#mouth-03 {
+  left: 15.93em;
+}
+
+#hat-03 {
+  left: 22.5em;
+}
+
+#eye-04,
+#mouth-04 {
+  left: 23.43em;
+}
+
+.controls button {
+  padding: 11px 20px;
+  font-size: 14px;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.controls .reset-filter {
+  color: #6C757D;
+  border: 1px solid #6C757D;
+}
+
+.controls .reset-filter:hover {
+  color: #fff;
+  background: #6C757D;
+}
+
+.controls .choose-img {
+  background: #6C757D;
+  border: 1px solid #6C757D;
+}
+
+.controls .save-img {
+  margin-left: 5px;
+  background: #5372F0;
+  border: 1px solid #5372F0;
+}
+
+.controls .row{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 540px){
+
+  .container{
+    width: 25.25em;
+  }
+
+  .draggables{
+    /* display: flex; */
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, min-max(200px, 1fr)); */
+    width: 25.25em;
+  }
+
+  .controls .row{
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding-bottom: 50px;
+  }
+}
